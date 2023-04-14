@@ -89,18 +89,6 @@ class TreeMapTest {
         map.clear();
         //then
         assertEquals(0, map.size());
-    }
-
-    @Test
-    void testTreeMapIsEmptyMethod() {
-        //given
-        TreeMap<String, String> map = new TreeMap<>();
-        //when
-        map.put("b", "🥦");
-        map.put("a", "🍎");
-        map.put("p", "🥔");
-        map.clear();
-        //then
         assertTrue(map.isEmpty());
     }
 

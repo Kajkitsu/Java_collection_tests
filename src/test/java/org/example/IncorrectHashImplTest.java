@@ -52,9 +52,16 @@ class IncorrectHashImplTest {
         });
     }
 
-    class SecondCorruptedKey extends CorruptedKey implements Comparable<SecondCorruptedKey> {
+    class SecondCorruptedKey implements Comparable<SecondCorruptedKey> {
+        protected int value;
+
         public SecondCorruptedKey(int value) {
-            super(value);
+            this.value = value;
+        }
+
+        @Override
+        public int hashCode() {
+            return 1;
         }
 
         @Override
@@ -78,7 +85,6 @@ class IncorrectHashImplTest {
         assertEquals("2", map.get(new SecondCorruptedKey(2)));
         assertEquals("3", map.get(new SecondCorruptedKey(3)));
     }
-
 
 
 }

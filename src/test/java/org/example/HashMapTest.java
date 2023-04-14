@@ -89,18 +89,6 @@ class HashMapTest {
         map.clear();
         //then
         assertEquals(0, map.size());
-    }
-
-    @Test
-    void testHashMapIsEmptyMethod() {
-        //given
-        HashMap<String, String> map = new HashMap<>();
-        //when
-        map.put("b", "🥦");
-        map.put("a", "🍎");
-        map.put("p", "🥔");
-        map.clear();
-        //then
         assertTrue(map.isEmpty());
     }
 

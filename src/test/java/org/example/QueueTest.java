@@ -27,6 +27,7 @@ class QueueTest {
         //then
         assertEquals(3, queue.size());
         assertEquals(1, queue.peek());
+        assertEquals(3, queue.size());
     }
 
     @Test
@@ -56,21 +57,6 @@ class QueueTest {
         assertEquals(1, result);
         assertEquals(2, queue.size());
         assertEquals(2, queue.peek());
-    }
-
-    @Test
-    void testQueuePeekMethod() {
-        //given
-        Queue<Integer> queue = new ArrayDeque<>();
-        //when
-        queue.add(1);
-        queue.add(2);
-        queue.add(3);
-        Integer result = queue.peek();
-        //then
-        assertEquals(1, result);
-        assertEquals(3, queue.size());
-        assertEquals(1, queue.peek());
     }
 
     @Test

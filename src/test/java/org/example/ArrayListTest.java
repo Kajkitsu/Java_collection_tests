@@ -1,9 +1,13 @@
 package org.example;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +16,8 @@ class ArrayListTest {
     @Test
     void testArrayListConstructor() {
         //given
-        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
+        Collection<Integer> collection = Arrays.asList(1, 2, 3);
+        List<Integer> list = new ArrayList<>(collection);
         //expect
         assertEquals(3, list.size());
         assertEquals(1, list.get(0));
@@ -44,7 +49,8 @@ class ArrayListTest {
         list.add(2);
         list.add(3);
         //then
-        assertThrows(IndexOutOfBoundsException.class, () -> list.get(3));
+        assertThrows(IndexOutOfBoundsException.class,
+                () -> list.get(0));
     }
 
     @Test
